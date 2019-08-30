@@ -6,6 +6,7 @@ APIClould 自定义弹出框
 在这我给大家分享一个简单的弹窗实现，主要利用 frame 实现。
 
 &emsp;&emsp;先上个效果图：
+![效果图](https://github.com/HanQiGod/apicloud_alert/blob/master/IMG_6644.PNG)
 
 &emsp;&emsp;点击遮照部位可以关闭弹窗。
 
