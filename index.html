@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+  <meta name="format-detection" content="telephone=no, email=no">
+  <title>首页</title>
+  <style type="text/css">
+	body{
+		background-color: #FFFFFF;
+	}
+  #btn {
+    width: 10rem;
+    height: 4rem;
+    margin: 10rem atuo;
+  }
+  </style>
+</head>
+<body>
+	<button id="btn" tapmode onclick="openframe()">点我打开弹窗</button>
+</body>
+<script type="text/javascript">
+	apiready = function(){
+		openframe();
+	}
+	function openframe(){
+		api.openFrame({
+	        name: 'dialog',
+	        url: './html/dialog.html',
+	        rect: {
+		        x:0,
+		        y:0,
+		        w:api.winWidth,
+		        h:api.winHeight
+	        },
+	        bgColor: 'rgba(0,0,0,0.6)',
+			bounces: false
+        });
+	}
+</script>
+</html>

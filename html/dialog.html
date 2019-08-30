@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <title>title</title>
+    <link rel="stylesheet" type="text/css" href="../css/api.css"/>
+    <style>
+    	html,body{
+    		height: 98%;
+			background: transparent;
+			-webkit-touch-callout: none;
+			font-family: Tahoma, Geneva, sans-serif;
+			font-style: normal;
+		}
+		#dialog{
+			background-color: #e7e7e7; border-radius: 6px;
+			position: absolute; margin: auto;
+			left: 0; right: 0; top: 0; bottom: 0;
+			width: 207px; height: 225px;
+			-webkit-transition: all .1s;
+			transition:all .1s;
+			-webkit-transform: scale(0);
+			transform:scale(0);
+			opacity: 0;
+		}
+		#dialog.in{
+			-webkit-transform: scale(1);
+			transform:scale(1);
+			opacity: 1;
+		}
+		img{
+			padding:15px;
+		}
+    </style>
+</head>
+<body>
+	<div id="dialog">
+		<img id="erweima" src="../image/myerweima.png" tapmode onclick="api.closeFrame()"/>
+	</div>
+</body>
+<script type="text/javascript" src="../script/api.js"></script>
+<script type="text/javascript" src="../script/zepto.min.js"></script>
+<script type="text/javascript">
+	$('#dialog').addClass('in');
+	apiready = function(){
+		$(document.body).on('touchend',function(e){
+			var dialog = $("#dialog")[0];
+			if(!$.contains(dialog, e.target)){
+				$('#dialog').removeClass('in');
+				setTimeout(function(){
+					api.closeFrame();
+				},200);
+			}
+		});
+	};
+</script>
+</html>
